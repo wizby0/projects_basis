@@ -1,0 +1,49 @@
+<h1>this is editing wall</h1>
+
+    <%= form_for :wall, url: wall_path(@wall), method: :patch do |f| %>
+  <% if @wall.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@wall.errors.count, "error") %> prohibited
+      this wall from being saved:</h2>
+    <ul>
+    <% @wall.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+	<p>
+	<%= f.label :title %><br>
+	<%= f.text_field :title %>
+	</p>
+
+	<p>
+	<%= f.label :text %><br>
+    <%= f.text_area :text %>
+ 	</p>
+
+
+ 	<% f.label :user_id %><br>
+    <%= f.hidden_field :user_id , value: 0 %>
+
+    <% f.label :read_authority %><br>
+     <%= f.text_area :read_authority %>
+<!--
+ 	<p>
+	<%= f.label :user_id %><br>
+    <%= f.text_area :user_id %>
+ 	</p>
+
+ 	<p>
+	<%= f.label :read_authority %><br>
+    <%= f.text_area :read_authority %>
+ 	</p>
+-->
+
+
+ 	  <p>
+    <%= f.submit %>  <%= link_to '', walls_path, class: "glyphicon glyphicon-remove btn btn-default" %> 
+
+  </p>
+<% end %>

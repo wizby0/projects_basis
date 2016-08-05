@@ -1,0 +1,25 @@
+<p>
+	<strong>answer:</strong>
+	<%= @answer_short.answer %>
+</p>
+
+<p>
+	<strong>public_result:</strong>
+	<%= @answer_short.public_result %>
+</p>
+
+<p>
+	<strong>user_id:</strong>
+	<%= @answer_short.user_id %>
+</p>
+
+<p>
+	<strong>question_id:</strong>
+	<%= @answer_short.question_id %>
+</p>
+
+
+<%= link_to '', answer_shorts_path,class: " glyphicon glyphicon-th-list btn default_btn" %> 
+<%= link_to '', edit_answer_short_path,class: " glyphicon glyphicon-wrench btn btn-default" %> 
+<%= link_to '', @answer_short,
+                      method: :delete, data: {confirm: 'Are you sure?' }, class: "glyphicon glyphicon-trash btn default_btn" %>

@@ -1,0 +1,46 @@
+<ol class="breadcrumb">
+    <li><a href="/walls">My list</a></li>
+    <li><a href="/walls/question_list">Question List</a></li> 
+	<li class="active">Answer list</a></li>
+	<li><a href="/walls/survey">Survey</a></li> 
+</ol>
+
+<div class="panel panel-primary">
+  <!-- Default panel contents -->
+  <div class="panel-heading">answer_short details</div>
+  <div class="panel-body">
+
+<table class="table">
+  <tr>
+    <th>answer_short_id</th>
+    <th>answer</th>
+    <th>public_result</th>
+    <th>user_id</th>
+    <th>question_id</th>
+    <th> </th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @answer_shorts.each do |answer_short| %>
+    <tr>
+      <td ><%=answer_short.id %></td>
+      <td><%= answer_short.answer %></td>
+      <td><%= answer_short.public_result %></td>
+      <td><%= answer_short.user_id %></td>
+      <td><%= answer_short.question_id %></td>
+       <td><%= link_to '', answer_short_path(answer_short), class: "glyphicon glyphicon-zoom-in btn-default" %></td>
+      <td><%= link_to '', edit_answer_short_path(answer_short) , class: "glyphicon glyphicon-wrench btn-default" %></td>
+      <td><%= link_to '', answer_short, 
+                      method: :delete, data: {confirm: 'Are you sure?' }, class: "glyphicon glyphicon-trash btn-default" %></td>
+
+    </tr>
+  <% end %>
+</table>
+<nav>
+ 
+</nav>
+</div>
+</div>
+  <%= link_to '', new_answer_short_path, class: "glyphicon glyphicon-plus btn btn-default floating_btn" %>
+

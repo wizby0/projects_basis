@@ -1,0 +1,42 @@
+<ol class="breadcrumb">
+    <li><a href="/walls">My list</a></li>
+    <li><a href="/walls/question_list">Question List</a></li> 
+    <li><a href="/walls/answer_list">Answer list</a></li> 
+    <li  class="active">Survey</a></li> 
+</ol>
+
+
+
+<%= form_for :wall, url: walls_path do |f| %>
+
+    <h1>survey for SSD peer matching</h1>
+
+        <% @questions.each do |question| %>
+            <p>
+             <%=  question.content %><br>
+             <%= f.text_field :content %>
+            </p>
+
+            <p>
+                <%= question.selection_option %><br>
+                <%= f.text_area :selection_option %>
+            </p>
+
+            <p>
+               <%= f.label :skill_area %><br>
+               <%= f.hidden_field :skill_area , value: question.id %>
+            </p>
+
+            <p>
+                <%#= f.submit "", class: "btn btn-primary btn-lg" %>
+                <%= button_tag :submit, class: "" do %>
+                <%= content_tag :span, "", class: "glyphicon glyphicon-ok btn btn-default" %>
+        <% end %> 
+        <% end %>
+            <%= link_to '', walls_path, class: "glyphicon glyphicon-remove btn btn-default" %> 
+            <%= link_to '',  walls_path,class: "glyphicon glyphicon-ok btn btn-default" %> 
+            <%= f.submit '', :class => "my_sbtn my_sbtn2"  %>
+
+        </p>
+<% end %>
+

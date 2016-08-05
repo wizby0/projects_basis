@@ -1,0 +1,26 @@
+<h1> Editing Question </h1>
+
+<%= form_for :question, url: question_path(@question), method: :patch do |f| %>
+ 
+<p>
+    <%= f.label :content %><br>
+    <%= f.text_field :content %>
+  </p>
+ 
+  <p>
+    <%= f.label :selection_option %><br>
+    <%= f.text_area :selection_option %>
+  </p>
+
+  <p>
+     <%= f.label :skill_area %><br>
+    <%= f.text_field :skill_area , value: 0 %>
+  </p>
+
+<p>
+<%= f.submit %>
+</p>
+
+<% end %>
+
+<%= link_to 'Back', questions_path %>

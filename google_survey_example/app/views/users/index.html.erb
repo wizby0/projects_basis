@@ -1,0 +1,44 @@
+<ol class="breadcrumb">
+  <li class="active">Qiestion list</li><!-- question/index -->
+  <li><a href="/users">User list</a></li><!-- user/index -->
+  <li><a href="/answers_short">Answer short list</a></li> <!-- answer/index -->
+  <li><a href="/answers_long">Answer long list</a></li> <!-- answer/index -->
+</ol>
+
+
+<div class="panel panel-primary">
+  <!-- Default panel contents -->
+  <div class="panel-heading">questions details</div>
+  <div class="panel-body">
+
+<table class="table">
+  <tr>
+    <th>user_id</th>
+    <th>Name</th>
+    <th>Nickname</th>
+    <th>password</th>
+    <th> </th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @users.each do |user| %>
+    <tr>
+      <td ><%= user.id %></td>
+      <td><%= user.name %></td>
+      <td><%= user.nickname %></td>
+      <td><%= user.password %></td>
+       <td><%= link_to '', user_path(user), class: "glyphicon glyphicon-zoom-in btn-default" %></td>
+      <td><%= link_to '', edit_user_path(user) , class: "glyphicon glyphicon-wrench btn-default" %></td>
+      <td><%= link_to '', user, 
+                      method: :delete, data: {confirm: 'Are you sure?' }, class: "glyphicon glyphicon-trash btn-default" %></td>
+    
+    </tr>
+  <% end %>
+</table>
+<nav>
+ 
+</nav>
+</div>
+</div>
+ <%= link_to '', new_user_path, class: "glyphicon glyphicon-plus btn btn-default floating_btn" %>

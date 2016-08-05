@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  content: MyString
+  selection_option: MyString
+  skill_area: 1
+
+two:
+  content: MyString
+  selection_option: MyString
+  skill_area: 1

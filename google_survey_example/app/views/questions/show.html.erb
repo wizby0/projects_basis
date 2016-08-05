@@ -1,0 +1,30 @@
+
+
+
+
+
+<p>
+<strong>question_id:</strong>
+<%= @question.content %>
+</p>
+
+<p>
+<strong>Content:</strong>
+<%= @question.content %>
+</p>
+
+<p>
+<strong>selection_option:</strong>
+<%= @question.selection_option %>
+</p>
+
+<p>
+<strong>skill_area:</strong>
+<%= @question.skill_area %>
+</p>
+
+
+<%= link_to '', questions_path,class: " glyphicon glyphicon-th-list btn default_btn" %> 
+<%= link_to '', edit_question_path,class: " glyphicon glyphicon-wrench btn btn-default" %> 
+<%= link_to '', @question,
+                      method: :delete, data: {confirm: 'Are you sure?' }, class: "glyphicon glyphicon-trash btn default_btn" %>

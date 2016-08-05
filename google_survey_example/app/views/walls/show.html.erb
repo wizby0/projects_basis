@@ -1,0 +1,30 @@
+<p>
+<strong>Title:</strong>
+<%= @wall.title %>
+</p>
+
+<p>
+<strong>Text:</strong>
+<%= @wall.text %>
+</p>
+
+<p>
+<strong>User_id:</strong>
+<%= @wall.user_id %>
+</p>
+
+<p>
+<strong>Read_authority:</strong>
+<%= @wall.read_authority %>
+</p>
+
+<h2>comments</h2>
+<%= render @wall.comments %>
+
+<h2>Add a comment:</h2>
+<%= render "comments/form" %>
+
+<%= link_to '', walls_path,class: " glyphicon glyphicon-th-list btn default_btn" %> 
+<%= link_to '', new_wall_path,class: " glyphicon glyphicon-pencil btn default_btn" %> 
+<%= link_to '', @wall,
+                      method: :delete, data: {confirm: 'Are you sure?' }, class: "glyphicon glyphicon-trash btn default_btn" %>

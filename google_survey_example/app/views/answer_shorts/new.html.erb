@@ -1,0 +1,27 @@
+<%= form_for :answer_short, url: answer_shorts_path do |f| %>
+  <p>
+    <%= f.label :answer %><br>
+    <%= f.text_field :answer %>
+  </p>
+ 
+  <p>
+    <%= f.label :public_result %><br>
+    <%= f.text_area :public_result %>
+  </p>
+
+  <p>
+    <%= f.label :user_id %><br>
+   <!--  <%= f.hidden_field :user_id,value: 0 %> -->
+    <%= f.number_field :user_id %>
+  </p>
+
+  <p>
+    <%= f.label :question_id %><br>
+  <!--   <%= f.hidden_field :question_id, value: 0 %> -->
+  <%= f.number_field :question_id %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

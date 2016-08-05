@@ -1,0 +1,44 @@
+<%= form_for :wall, url: walls_path do |f| %>
+
+	<h1>this is new note</h1>
+	<p>
+	<%= f.label :title %><br>
+	<%= f.text_field :title %>
+	</p>
+
+	<p>
+	<%= f.label :text %><br>
+    <%= f.text_area :text %>
+ 	</p>
+
+
+ 	<% f.label :user_id %><br>
+    <%= f.hidden_field :user_id , value: 0 %>
+
+    <% f.label :read_authority %><br>
+    <%= f.hidden_field :read_authority , value: 0 %>
+<!--
+ 	<p>
+	<%= f.label :user_id %><br>
+    <%= f.text_area :user_id %>
+ 	</p>
+
+ 	<p>
+	<%= f.label :read_authority %><br>
+    <%= f.text_area :read_authority %>
+ 	</p>
+-->
+
+
+ 	  <p>
+    <%#= f.submit "", class: "btn btn-primary btn-lg" %>
+    <%= button_tag :submit, class: "" do %>
+        <%= content_tag :span, "", class: "glyphicon glyphicon-ok btn btn-default" %>
+    <% end %> 
+
+    <%= link_to '', walls_path, class: "glyphicon glyphicon-remove btn btn-default" %> 
+    <%= link_to '',  walls_path,class: "glyphicon glyphicon-ok btn btn-default" %> 
+   <%= f.submit '', :class => "my_sbtn my_sbtn2"  %>
+
+  </p>
+<% end %>

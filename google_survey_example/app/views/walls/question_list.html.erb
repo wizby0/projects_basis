@@ -1,0 +1,38 @@
+<ol class="breadcrumb">
+    <li><a href="/walls">My list</a></li>
+    <li class="active">Question List</a></li> 
+    <li><a href="/walls/answer_list">Answer list</a></li> 
+<li><a href="/walls/survey">Survey</a></li> 
+</ol>
+
+
+
+<div class="panel panel-primary">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Notes on my wall</div>
+  <div class="panel-body">
+
+<table class="table">
+  <tr>
+    <th>question_id</th>
+    <th>content</th>
+    <th>seletion_option</th>
+    <th>skill_area</th>
+  </tr>
+ 
+  <% @questions.each do |question| %>
+    <tr>
+      <td ><%= question.id %></td>
+      <td><%= question.content %></td>
+      <td><%= question.selection_option %></td>
+      <td><%= question.skill_area %></td>
+    
+    </tr>
+  <% end %>
+</table>
+<nav>
+  <ul class="pager">
+    <li><%= link_to '', walls_path, class: "glyphicon glyphicon-arrow-left btn btn-default" %>  </li>
+    <li><%= link_to '', new_wall_path, class: "glyphicon glyphicon-plus btn btn-default" %></li>
+    </ul>
+</nav>

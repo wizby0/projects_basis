@@ -1,0 +1,52 @@
+<ol class="breadcrumb">
+  <li class="active">My list</li>
+  <li><a href="/walls/question_list">Question LIst</a></li>
+  <li><a href="/walls/answer_list">Answer list</a></li> 
+   <li><a href="/walls/survey">Survey</a></li> 
+
+</ol>
+
+<div class="panel panel-primary">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Notes on my wall</div>
+  <div class="panel-body">
+
+<table class="table">
+  <tr>
+    <th>question_id</th>
+    <th>content</th>
+    <th>seletion_option</th>
+    <th>skill_area</th>
+  </tr>
+
+  <% @questions.each do |question| %>
+  <% display_count =0%>
+    <% @answer_shorts.each do |answer_short| %>
+
+    <% if answer_short.public_result ==  0 && display_count == 0 %>
+      <% display_count =1%>
+       <tr>
+        <td ><%= question.id %></td>
+        <td><%= question.content %></td>
+        <td>답변내용 <%= answer_short.answer %></td>
+        <td>공유 정도 <%= answer_short.public_result %></td>      
+       </tr>
+
+    <% end %>  <!-- if_answer_s -->
+  <% end %> <!--  answer_shorts.each answer_short  -->
+
+  <% if display_count == 0 %>
+        <tr>
+        <td ><%= question.id %></td>
+        <td><%= question.content %></td>
+        <td>x</td>
+        <td>x</td>
+        </tr>
+  <%end%> <!-- if_display_count -->
+
+  <% end %> <!--  questions.each question  -->
+ 
+</table>
+
+</div>
+</div>
